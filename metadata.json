@@ -1,0 +1,5 @@
+{
+  "name": "Persistent Task Reminder",
+  "description": "A modern task reminder app that persistently reminds you until you complete your tasks.",
+  "requestFramePermissions": []
+}
