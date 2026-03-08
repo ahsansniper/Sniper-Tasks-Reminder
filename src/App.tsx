@@ -31,7 +31,8 @@ export default function App() {
 
   const handleInstallClick = async () => {
     if (isInIframe) {
-      window.open(window.location.href, '_blank');
+      const appUrl = process.env.APP_URL || window.location.origin;
+      window.open(appUrl, '_blank');
       return;
     }
     
@@ -66,7 +67,7 @@ export default function App() {
             <div className="w-8 h-8 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-600/20">
               <Bell size={18} />
             </div>
-            <h1 className="text-xl font-bold tracking-tight">Persistent Reminder</h1>
+            <h1 className="text-xl font-bold tracking-tight">Ahsan's Reminder</h1>
           </div>
           <div className="flex items-center gap-2">
             {(deferredPrompt || isInIframe) && (

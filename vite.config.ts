@@ -13,8 +13,11 @@ export default defineConfig(({mode}) => {
       VitePWA({
         registerType: 'autoUpdate',
         includeAssets: ['icon.svg'],
+        workbox: {
+          navigateFallbackDenylist: [/^\/api/],
+        },
         manifest: {
-          name: 'Persistent Reminder',
+          name: "Ahsan's Reminder",
           short_name: 'Reminder',
           description: 'A persistent task reminder application',
           theme_color: '#4f46e5',
@@ -33,6 +36,7 @@ export default defineConfig(({mode}) => {
     ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+      'process.env.APP_URL': JSON.stringify(process.env.APP_URL),
     },
     resolve: {
       alias: {
